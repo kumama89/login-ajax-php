@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Ajax Form - jQuery</title>
+        <link rel="stylesheet" type="text/css" href="css/ajax_form.css">
+        <link rel="stylesheet" type="text/css" href="css/icon.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery.ajax_form.min.js"></script>
+        <script type="text/javascript" src="js/jquery_ajax_form.js"></script>
+
+        
+</head>
+<body>
+	<h2>Ajax Form </h2>
+	<div class="info" style="margin-bottom:10px">
+		<div class="tip icon-tip">&nbsp;</div>
+		<div>Type in input box and submit the form.</div>
+	</div>
+	
+	<div class="easyui-panel" title="Ajax Form" style="width:300px;padding:10px;">
+		<form id="ff" action="ajax_form.php" method="post" enctype="multipart/form-data">
+			<table>
+				<tr>
+					<td>Name:</td>
+					<td><input name="name" class="f1 easyui-textbox"></input></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input name="email" class="f1 easyui-textbox"></input></td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td><input name="phone" class="f1 easyui-textbox"></input></td>
+				</tr>
+				<tr>
+					<td>File:</td>
+					<td><input name="file" class="f1 easyui-filebox"></input></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Submit"></input></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<style scoped>
+		.f1{
+			width:200px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$('#ff').form({
+				success:function(data){
+					$.messager.alert('Info', data, 'info');
+				}
+			});
+		});
+	</script>
+</body>
+</html>

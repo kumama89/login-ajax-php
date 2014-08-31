@@ -1,4 +1,4 @@
 login-ajax-php
 ==============
 
-Simple Login Form using php &amp; ajax
+Simple Login Form using php/jquery/ajax
